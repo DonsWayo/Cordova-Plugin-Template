@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    id : *Required* An identifier for the plugin.
+    version : *Required* A version number for the plugin. Semver syntax is supported as well.
+-->
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="my-cordova-plugin"
+    version="1.0.0">
+    <!--
+        name : used to specify the name of the plugin
+        description : used to specify the description of the plugin
+        author : contains the name of the plugin author
+        keywords : contains comma separated keywords to describe the plugin
+        license : used to specify the license of the plugin
+        repo : contains the links of repository for this plugins
+        issue : contains the links to issues a notification about the conflict of the plugin
+    -->
+    <name>cordova-plugin-template</name>
+    <description>a cordova plugin template</description>
+    <author>boby913</author>
+    <license>MIT</license>
+    <keywords>cordova plugin,cordova template</keywords>
+    <repo>https://github.com/boby913/cordova-plugin-template.git</repo>
+    <issue>https://github.com/boby913/cordova-plugin-template/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=6.0.0"/>
+        <engine name="cordova-android" version=">=5.0.0"/>
+        <engine name="cordova-ios" version=">=4.0.0"/>
+        <engine name="android-sdk" version=">=19" />
+        <engine name="apple-ios" version=">=8.0" />
+    </engines>
+
+    <js-module src="www/MyCordovaPlugin.js" name="MyCordovaPlugin">
+      <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+      <clobbers target="MyCordovaPlugin" />
+    </js-module>
+
+    <!--
+        add dependency tag if you need any 3rd party dependency
+        <dependency id="cordova-plugin-xxx" />
+    -->
+
+    <!-- android -->
+    <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="MyCordovaPlugin">
+          <param name="android-package" value="com.example.MyCordovaPlugin" />
+        </feature>
+      </config-file>
+
+      <!--
+          source-file refer to executable source code that should be installed into a project
+      -->
+      <!--
+          resource-file refer to executable library file that should be installed into a project
+      -->
+      <source-file src="src/android/com/example/MyCordovaPlugin.java" target-dir="src/com/example/" />
+      <!--resource-file src="path/to/resource/file" target="target/to/resource.file" /-->
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="MyCordovaPlugin">
+                <param name="ios-package" value="MyCordovaPlugin" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/MyCordovaPlugin.h" />
+        <source-file src="src/ios/MyCordovaPlugin.m" />
+        <!--resource-file src="path/to/resource/file" target="target/to/resource/file" /-->
+
+        <!--
+        identifies a framework on which the plugin depends.
+        -->
+        <!--framework src="path/to/framework/source" /-->
+    </platform>
+</plugin>

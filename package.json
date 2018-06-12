@@ -1,0 +1,18 @@
+{
+  "name": "cordova-plugin-template",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "my-cordova-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "a cordova plugin template",
+  "keywords": [
+    "cordova plugin",
+    "cordova template"
+  ],
+  "author": "boby913",
+  "license": "MIT"
+}
