@@ -1,2 +1,2 @@
 # cordova-plugin-template
-Template for cordova plugin startup
+A template to startup cordova plugin development
